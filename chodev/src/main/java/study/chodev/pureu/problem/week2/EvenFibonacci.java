@@ -1,7 +1,21 @@
 package study.chodev.pureu.problem.week2;
 
+/**
+ * even fibonacci's sum
+ * 
+ * @author pureu
+ * @since 2017.06.16
+ * @version 1.0
+ *
+ */
 public class EvenFibonacci {
 
+	/**
+	 * business logic
+	 * 
+	 * @param arg
+	 * @return void
+	 */
 	public void process(Object[] arg) {
 		
 		int max = (Integer)arg[0];

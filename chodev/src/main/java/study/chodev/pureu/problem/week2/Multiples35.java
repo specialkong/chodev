@@ -1,7 +1,21 @@
 package study.chodev.pureu.problem.week2;
 
+/**
+ * 3 and 5 Multiples's sum
+ * 
+ * @author pureu
+ * @since 2017.06.16
+ * @version 1.0
+ *
+ */
 public class Multiples35 {
 
+	/**
+	 * business logic
+	 * 
+	 * @param arg
+	 * @return void
+	 */
 	public void process(Object[] arg) {
 		
 		int max = (Integer)arg[0];
@@ -26,6 +40,13 @@ public class Multiples35 {
 		System.out.println("sum : " + sum);
 	}
 	
+	/**
+	 * isMultiple
+	 * 
+	 * @param num
+	 * @param devider
+	 * @return boolean
+	 */
 	public boolean isMultiple(int num, int devider) {
 		if(num % devider == 0) {
 			return true;
