@@ -1,0 +1,5 @@
+1. 상속
+https://wikidocs.net/book/31
+
+2. 인터페이스
+http://enter.tistory.com/122

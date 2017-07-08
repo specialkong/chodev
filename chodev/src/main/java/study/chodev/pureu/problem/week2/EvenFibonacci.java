@@ -1,5 +1,7 @@
 package study.chodev.pureu.problem.week2;
 
+import study.chodev.common.Solution;
+
 /**
  * even fibonacci's sum
  * 
@@ -8,7 +10,7 @@ package study.chodev.pureu.problem.week2;
  * @version 1.0
  *
  */
-public class EvenFibonacci {
+public class EvenFibonacci implements Solution {
 
 	/**
 	 * business logic
@@ -16,14 +18,14 @@ public class EvenFibonacci {
 	 * @param arg
 	 * @return void
 	 */
-	public void process(Object[] arg) {
+	public void solve(Object[] arg) {
 		
-		int max = (Integer)arg[0];
-		int odd = 1;
-		int even = 2;
-		int fibonacci = 0;
-		int evenSum = even;
-		int idx = 1;
+		double max = (Integer)arg[0];
+		double odd = 1;
+		double even = 2;
+		double fibonacci = 0;
+		double evenSum = even;
+		double idx = 1;
 		
 		System.out.print(odd + " " + even + " ");
 		while(fibonacci < max) {
@@ -45,8 +47,26 @@ public class EvenFibonacci {
 	}
 	
 	public static void main(String[] args) {
-		EvenFibonacci evenFibonacci = new EvenFibonacci();
-		evenFibonacci.process(new Object[]{100});
-		evenFibonacci.process(new Object[]{4000000});
+//		EvenFibonacci evenFibonacci = new EvenFibonacci();
+//		evenFibonacci.solve(new Object[]{100});
+//		evenFibonacci.solve(new Object[]{4000000});
+//		
+//		Multiples35 multiple = new Multiples35();
+//		multiple.solve(new Object[]{10, 3, 5});
+//		multiple.solve(new Object[]{1000, 3, 5});
+		
+//		Solution sol = new EvenFibonacci();
+//		sol.solve(new Object[]{100});
+//		
+//		sol = new Multiples35();
+//		sol.solve(new Object[]{10, 3, 5});
+		
+		printObject(new EvenFibonacci());
+		printObject(new Multiples35());
 	}
+	
+	public static void printObject(Solution sol) {
+		sol.solve(new Object[]{100}); 
+		
+	}	
 }
