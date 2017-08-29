@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chodev.example.sample.dao.SampleMapper">
+
+	<resultMap id="sample" type="chodev.example.sample.vo.SampleVO">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="description" column="description"/>
+		<result property="useYn" column="use_yn"/>
+		<result property="regUser" column="reg_user"/>
+	</resultMap>
+	
+	<insert id="insertSample" parameterType="SampleVO">
+
+		INSERT INTO SAMPLE (
+			ID
+			, NAME
+			, DESCRIPTION
+			, USE_YN
+			, REG_USER
+		) VALUES (
+			sample_seq.nextval
+			, #{name}
+			, #{description}
+			, #{useYn}
+			, #{regUser}
+		)
+
+	</insert>
+
+	<update id="updateSample">
+
+		UPDATE SAMPLE SET
+			ID = #{id}
+			, NAME = #{name}
+			, DESCRIPTION = #{description}
+			, USE_YN = #{useYn}
+		WHERE ID = #{id}
+
+	</update>
+
+	<delete id="deleteSample">
+
+		DELETE FROM SAMPLE
+		WHERE ID = #{id}
+
+	</delete>
+
+	<select id="selectSample" resultMap="sample">
+
+		SELECT
+			ID
+			, NAME
+			, DESCRIPTION
+			, USE_YN
+			, REG_USER
+		FROM SAMPLE
+		WHERE ID = #{id}
+
+	</select>
+
+	<select id="selectSampleList" parameterType="SampleVO"
+		resultMap="sample">
+
+		SELECT
+			ID
+			, NAME
+			, DESCRIPTION
+			, USE_YN
+			, REG_USER
+		FROM (
+			SELECT
+				ID
+				, NAME
+				, DESCRIPTION
+				, USE_YN
+				, REG_USER
+				, ROW_NUMBER() OVER(ORDER BY ID ASC) as rnum
+			FROM SAMPLE
+			<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<choose>
+					<when test="searchCondition == 0">
+						AND ID LIKE '%' || #{searchKeyword} || '%'
+					</when>
+					<when test="searchCondition == 1">
+						AND NAME LIKE '%' || #{searchKeyword} || '%'
+					</when>
+				</choose>
+			</if>
+			</where>
+		)
+		WHERE rnum BETWEEN #{firstIndex} and #{lastIndex}
+	</select>
+
+	<select id="selectSampleListTotCnt" parameterType="SampleVO"
+		resultType="int">
+
+		SELECT 
+			COUNT(*) totcnt
+		FROM SAMPLE
+		<where>
+		<if test="searchKeyword != null and searchKeyword != ''">
+			<choose>
+				<when test="searchCondition == 0">
+					AND ID LIKE '%' || #{searchKeyword} || '%'
+				</when>
+				<when test="searchCondition == 1">
+					AND NAME LIKE '%' || #{searchKeyword} || '%'
+				</when>
+			</choose>
+		</if>
+		</where>
+	</select>
+
+</mapper>
