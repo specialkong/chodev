@@ -31,8 +31,7 @@
 	<update id="updateSample">
 
 		UPDATE SAMPLE SET
-			ID = #{id}
-			, NAME = #{name}
+			NAME = #{name}
 			, DESCRIPTION = #{description}
 			, USE_YN = #{useYn}
 		WHERE ID = #{id}
