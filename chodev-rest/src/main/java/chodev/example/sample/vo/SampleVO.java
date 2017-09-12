@@ -15,6 +15,11 @@
  */
 package chodev.example.sample.vo;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import chodev.example.common.vo.BaseVO;
 
 /**
@@ -33,23 +38,30 @@ import chodev.example.common.vo.BaseVO;
  *
  *  Copyright (C) by MOPAS All right reserved.
  */
+@XmlRootElement (name = "sample")
+@XmlAccessorType(XmlAccessType.NONE)
 public class SampleVO extends BaseVO {
 
 	private static final long serialVersionUID = 1L;
 
 	/** 아이디 */
+	@XmlAttribute
 	private String id;
 
 	/** 이름 */
+	@XmlAttribute
 	private String name;
 
 	/** 내용 */
+	@XmlAttribute
 	private String description;
 
 	/** 사용여부 */
+	@XmlAttribute
 	private String useYn;
 
 	/** 등록자 */
+	@XmlAttribute
 	private String regUser;
 
 	public String getId() {

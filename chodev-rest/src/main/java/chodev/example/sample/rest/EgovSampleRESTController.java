@@ -21,10 +21,10 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import chodev.example.sample.service.EgovSampleService;
@@ -62,7 +62,7 @@ public class EgovSampleRESTController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/egovSampleList")
-	public @ResponseBody Map<String, Object> selectSampleList(@RequestBody SampleVO searchVO) throws Exception {
+	public Map<String, Object> selectSampleList(@RequestBody SampleVO searchVO) throws Exception {
 
 		/** EgovPropertyService.sample */
 		searchVO.setPageUnit(searchVO.getPageUnit());
@@ -96,7 +96,7 @@ public class EgovSampleRESTController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/addSample", method = RequestMethod.POST)
-	public @ResponseBody Map<String, Object> addSample(@RequestBody SampleVO sampleVO)
+	public Map<String, Object> addSample(@RequestBody SampleVO sampleVO)
 			throws Exception {
 
 		sampleService.insertSample(sampleVO);
@@ -112,7 +112,7 @@ public class EgovSampleRESTController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/selectSample", method = RequestMethod.POST)
-	public @ResponseBody SampleVO selectSample(@RequestBody SampleVO searchVO) throws Exception {
+	public SampleVO selectSample(@RequestBody SampleVO searchVO) throws Exception {
 		return sampleService.selectSample(searchVO);
 	}
 
@@ -122,7 +122,7 @@ public class EgovSampleRESTController {
 	 * @exception Exception
 	 */
 	@RequestMapping("/updateSample")
-	public @ResponseBody Map<String, Object> updateSample(@RequestBody SampleVO sampleVO)
+	public Map<String, Object> updateSample(@RequestBody SampleVO sampleVO)
 			throws Exception {
 
 		sampleService.updateSample(sampleVO);
@@ -134,14 +134,28 @@ public class EgovSampleRESTController {
 	/**
 	 * 글을 삭제한다.
 	 * @param sampleVO - 삭제할 정보가 담긴 VO
-	 * @param status
 	 * @exception Exception
 	 */
 	@RequestMapping("/deleteSample")
-	public @ResponseBody Map<String, Object> deleteSample(@RequestBody SampleVO searchVO) throws Exception {
+	public Map<String, Object> deleteSample(@RequestBody SampleVO searchVO) throws Exception {
 		sampleService.deleteSample(searchVO);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", "ok");
 		return map;
+	}
+	
+	/**
+	 * get test
+	 * @exception Exception
+	 */
+	@RequestMapping(value = "/samples/{id}")
+	public SampleVO samples(@PathVariable("id") String id) throws Exception {
+		SampleVO sampleVO = new SampleVO();
+		sampleVO.setId(id);
+		sampleVO.setName("resttest1");
+		sampleVO.setUseYn("Y");
+		sampleVO.setDescription("do test1");
+		sampleVO.setRegUser("tester1");
+		return sampleVO;
 	}
 }
