@@ -1,6 +1,6 @@
-package info.chodev.algorithm.seohae.first;
+package info.chodev.algorithm.kimseohae.first;
 
-public class Main07 {
+public class Main12 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
