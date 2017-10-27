@@ -28,6 +28,7 @@ public class Collatz {
 			answer++;
 			
 			if(answer == 500) {
+				answer = -1;
 				break;
 			}
 		}
