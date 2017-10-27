@@ -3,7 +3,7 @@ package info.chodev.algorithm.kimseohae.first;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main13 {
+public class FindKim {
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
     	System.out.println("seoul 안에 있는 사람 이름을 입력하세요. ,으로 구분합니다.");

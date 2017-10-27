@@ -2,7 +2,7 @@ package info.chodev.algorithm.kimseohae.first;
 
 import java.util.Scanner;
 
-public class Main2_1 {
+public class HarshadNumber {
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
         String a = sc.nextLine(); //ex)12345 입력

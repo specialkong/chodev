@@ -2,7 +2,7 @@ package info.chodev.algorithm.kimseohae.first;
 
 import java.util.Scanner;
 
-public class Main09 {
+public class MinMax {
     public static void gcdlcm(int a, int b, int max) {
        
     }

@@ -2,7 +2,7 @@ package info.chodev.algorithm.kimseohae.first;
 
 import java.util.Scanner;
 
-public class Main16 {
+public class printTriangle {
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();

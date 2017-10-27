@@ -2,7 +2,7 @@ package info.chodev.algorithm.kimseohae.first;
 
 import java.util.Scanner;
 
-public class Main01 {
+public class DivisorMultiple {
     public static void gcdlcm(int a, int b, int max) {
         int result = 1;
         

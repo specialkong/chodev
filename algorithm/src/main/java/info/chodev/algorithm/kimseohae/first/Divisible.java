@@ -3,7 +3,7 @@ package info.chodev.algorithm.kimseohae.first;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main14 {
+public class Divisible {
     public static void gcdlcm(int a, int b, int max) {
        
     }

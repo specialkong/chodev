@@ -2,7 +2,7 @@ package info.chodev.algorithm.kimseohae.first;
 
 import java.util.Scanner;
 
-public class Main19 {
+public class HideNumber {
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
         String a = sc.nextLine();
