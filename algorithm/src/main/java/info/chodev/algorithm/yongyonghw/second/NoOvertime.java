@@ -29,7 +29,7 @@ class NoOvertime {
 		// 야근 지수를 최소화 하였을 때의 야근 지수는 몇일까요?
 		return result;
 	}
-	public <T> void findMaxIndex(List<T> worksList) {
+	/*public <T> void findMaxIndex(List<T> worksList) {
 		WorkInfo workInfo = new WorkInfo();
 		for (int i = 0; i < worksList.size(); i ++) {
 			int work = (Integer) worksList.get(i);
@@ -72,6 +72,6 @@ class NoOvertime {
 			this.worksList
 			return worksList;
 		}
-	}
+	}*/
 }
 
