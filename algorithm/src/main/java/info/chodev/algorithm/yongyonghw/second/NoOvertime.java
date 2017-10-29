@@ -69,6 +69,7 @@ class NoOvertime {
 			this.maxIndex = maxIndex;
 		}
 		private <T> List<T> doWorks() {
+			this.worksList
 			return worksList;
 		}
 	}
