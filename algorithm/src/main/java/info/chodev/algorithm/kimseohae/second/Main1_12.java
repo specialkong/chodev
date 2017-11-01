@@ -1,13 +1,7 @@
 package info.chodev.algorithm.kimseohae.second;
 
-import static org.hamcrest.CoreMatchers.containsString;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 /**
  * 문자열 다루기 기본
