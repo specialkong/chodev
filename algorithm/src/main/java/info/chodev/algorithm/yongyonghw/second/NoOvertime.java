@@ -1,11 +1,8 @@
 package info.chodev.algorithm.yongyonghw.second;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.lang3.ArrayUtils;
 
 /*야근 지수
 회사원인 수민이는 많은 일이 쌓여 있습니다. 
@@ -19,59 +16,64 @@ noOvertime 함수를 제작하여 수민이의 야근 지수를 최소화 한 �
 일을 한 결과는 [2, 2, 2]가 되고 야근 지수는 22 + 22 + 22 = 12가 되어 12를 반환해 줍니다.*/
 class NoOvertime {
 	public int noOvertime(int no, int[] works) {
-		ArrayList<Integer> worksList = (ArrayList<Integer>) Arrays.asList(ArrayUtils.toObject(works));
-		
-		//no 반복 횟수
-		while (no == 0) {
-			
+		ArrayList<Integer> worksList = new ArrayList<Integer>();
+		for (int a : works) {
+			worksList.add(a);
 		}
-		int result = 0;
+		// no 반복 횟수
+		WorkInfo workInfo = new WorkInfo(worksList);
+
+		while (no != 0) {
+			workInfo.doWorks();
+			no--;
+		}
 		// 야근 지수를 최소화 하였을 때의 야근 지수는 몇일까요?
-		return result;
+		return workInfo.getSum();
 	}
-	/*public <T> void findMaxIndex(List<T> worksList) {
-		WorkInfo workInfo = new WorkInfo();
-		for (int i = 0; i < worksList.size(); i ++) {
-			int work = (Integer) worksList.get(i);
-			workInfo
-			if(max > work) {
-				max = work;
-				maxIndex = i;
-			}
-		}
-		
-	}
+
 	public static void main(String[] args) {
 		NoOvertime c = new NoOvertime();
-		int []test = {4,3,3};
-		System.out.println(c.noOvertime(4,test));
+		int[] test = { 4, 3, 3 };
+		System.out.println(c.noOvertime(4, test));
 	}
-	
-	private class WorkInfo<T> {
+
+	private class WorkInfo {
 		int max;
 		int maxIndex;
-		List<T> worksList;
-		WorkInfo(List<T> worksList) {
-			this.max = 0;
-			this.maxIndex = 0;
+		List<Integer> worksList;
+
+		WorkInfo(List<Integer> worksList) {
 			this.worksList = worksList;
 		}
-		private int getMax() {
-			return max;
-		}
-		private void setMax(int max) {
-			this.max = max;
-		}
-		private int getMaxIndex() {
-			return maxIndex;
-		}
-		private void setMaxIndex(int maxIndex) {
-			this.maxIndex = maxIndex;
-		}
-		private <T> List<T> doWorks() {
-			this.worksList
-			return worksList;
-		}
-	}*/
-}
 
+		private List<Integer> doWorks() {
+			this.max = 0;
+			this.maxIndex = 0;
+			List<Integer> arr = null;
+			arr = (List<Integer>) worksList;
+			int i = 0;
+			for (Integer work : arr) {
+				if (this.max < (Integer) work) {
+					this.max = (Integer) work;
+					this.maxIndex = i;
+				}
+				i++;
+			}
+			// max의 값을 꺼내와서
+			arr.set(this.maxIndex, arr.get(this.maxIndex) - 1);
+			return arr;
+		}
+
+		/**
+		 * 합계 출력
+		 * @return
+		 */
+		private int getSum() {
+			int sum = 0;
+			for (int i = 0; i < this.worksList.size(); i++) {
+				sum += worksList.get(i) * worksList.get(i);
+			}
+			return sum;
+		}
+	}
+}
