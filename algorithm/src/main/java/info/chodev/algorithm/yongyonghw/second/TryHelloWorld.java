@@ -17,7 +17,13 @@ X	X	O	O	O
 X	X	X	X	X
 가 되며 넓이는 9가 되므로 9를 반환해 주면 됩니다.*/
 
-
+/*
+ * 풀이..
+ * 
+ * 1. x,y 형태로 분리
+ * 2. 루프 돌면서 O 중 가로 연속을 담는다. (Y값 연속)
+ * 3. 세로로 연속하면(X값 연속), 이전과 가로 값을 비교하여 일치개수를 찾는다. (최대 - 최소) 
+ */
 class TryHelloWorld
 {
     public int findLargestSquare(char [][]board)

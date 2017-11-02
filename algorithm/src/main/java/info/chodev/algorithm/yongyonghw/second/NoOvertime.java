@@ -1,6 +1,7 @@
 package info.chodev.algorithm.yongyonghw.second;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -38,8 +39,6 @@ class NoOvertime {
 	}
 
 	private class WorkInfo {
-		int max;
-		int maxIndex;
 		List<Integer> worksList;
 
 		WorkInfo(List<Integer> worksList) {
@@ -47,21 +46,9 @@ class NoOvertime {
 		}
 
 		private List<Integer> doWorks() {
-			this.max = 0;
-			this.maxIndex = 0;
-			List<Integer> arr = null;
-			arr = (List<Integer>) worksList;
-			int i = 0;
-			for (Integer work : arr) {
-				if (this.max < (Integer) work) {
-					this.max = (Integer) work;
-					this.maxIndex = i;
-				}
-				i++;
-			}
-			// max의 값을 꺼내와서
-			arr.set(this.maxIndex, arr.get(this.maxIndex) - 1);
-			return arr;
+			Collections.sort(worksList);
+			worksList.set(worksList.size() - 1, worksList.get(worksList.size() - 1) - 1);
+			return worksList;
 		}
 
 		/**
