@@ -19,13 +19,13 @@ public class Bridge {
 
 	public int getBridgeCount(int n, int m) {
 		
-		int count = 1;
 		if(n == m) {
-			return count;
+			return 1;
 		} else if(n == 1) {
 			return m;
 		} else {
-			return m * getBridgeCount(n-1, m-1);
+			
+			
 		}
 	}
 	
