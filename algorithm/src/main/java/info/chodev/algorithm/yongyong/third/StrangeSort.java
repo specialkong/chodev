@@ -13,10 +13,12 @@ public class StrangeSort {
 		}
 		Comparator<String> comparator = new Comparator<String>() {
 			public int compare(String o1, String o2) {
-				if(o1.charAt(n) >= o2.charAt(n))
+				if(o1.charAt(n) > o2.charAt(n))
 					return 1;
-				else
+				else if(o1.charAt(n) < o2.charAt(n))
 					return -1;
+				else
+					return 0;
 			}
 		};
 		arrList.sort(comparator);
@@ -27,7 +29,7 @@ public class StrangeSort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String [] arr = {"sun", "bed", "car"};
-		doSort(0, arr);
+		doSort(1, arr);
 	}
 
 }
