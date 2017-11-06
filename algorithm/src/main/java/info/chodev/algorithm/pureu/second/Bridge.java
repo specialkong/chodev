@@ -24,8 +24,12 @@ public class Bridge {
 		} else if(n == 1) {
 			return m;
 		} else {
+			int sum = 0;
 			
-			
+			while(n <= m) {
+				sum += getBridgeCount(n-1, --m);
+			}
+			return sum;
 		}
 	}
 	

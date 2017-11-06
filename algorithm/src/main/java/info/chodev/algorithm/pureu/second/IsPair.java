@@ -13,8 +13,6 @@ package info.chodev.algorithm.pureu.second;
  */
 public class IsPair {
 
-	private CountPY countPY = new CountPY();
-	
 	/**
 	 * 괄호 확인하기
 	 * 
@@ -22,44 +20,22 @@ public class IsPair {
 	 * @return boolean
 	 */
 	public boolean isPair(String s) {
-		boolean isEqualCount = countPY.getCount(s, '(') == countPY.getCount(s, ')'); 
-		return isRight(s) && isLeft(s) && isEqualCount;
-	}
-	
-	/**
-	 * 오른쪽 괄호 확인하기
-	 * 
-	 * @param String s
-	 * @return boolean
-	 */
-	public boolean isRight(String s) {
-		String[] array = s.split("\\)");
-		boolean isRight = true;
-		for(int i=0;i<array.length-1;i++) {
-			if(countPY.getCount(array[i], '(') != 1) {
-				isRight = false;
+		int n = 0;
+		for(char c:s.toCharArray()) {
+			if(c == '(') {
+				n++;
+			} else if(c == ')') {
+				n--;
+			}
+			if(n < 0) {
 				break;
 			}
 		}
-		return isRight;
-	}
-	
-	/**
-	 * 왼쪽 괄호 확인하기
-	 * 
-	 * @param String s
-	 * @return
-	 */
-	public boolean isLeft(String s) {
-		String[] array = s.split("\\(");
-		boolean isLeft = true;
-		for(int i=1;i<array.length;i++) {
-			if(countPY.getCount(array[i], ')') != 1) {
-				isLeft = false;
-				break;
-			}
+		if(n >= 0) {
+			return true;
+		} else {
+			return false;
 		}
-		return isLeft;
 	}
 	
 	public static void main(String[] args) {
