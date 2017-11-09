@@ -3,7 +3,7 @@ package info.chodev.algorithm.kimseohae.third;
 /**
  * 부녀회장이 될테야
  * @author seohae
- * @since 2017.11.04
+ * @since 2017.11.09
  *
  */
 
