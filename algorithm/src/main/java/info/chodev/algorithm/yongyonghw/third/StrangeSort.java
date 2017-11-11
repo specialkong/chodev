@@ -1,4 +1,4 @@
-package info.chodev.algorithm.yongyong.third;
+package info.chodev.algorithm.yongyonghw.third;
 
 import java.util.ArrayList;
 import java.util.Comparator;
