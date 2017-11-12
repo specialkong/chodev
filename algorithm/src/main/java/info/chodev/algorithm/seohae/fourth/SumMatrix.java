@@ -2,7 +2,19 @@ package info.chodev.algorithm.seohae.fourth;
 
 import java.util.Arrays;
 
+/**
+ * 행렬의 덧셈
+ * @author seohae
+ * @since 2017.11.12
+ */
 public class SumMatrix {
+	
+	/**
+	 * 행렬을 더해서 새로운 배열 생성
+	 * @param A
+	 * @param B
+	 * @return 
+	 */
 	int[][] sumMatrix(int[][] A, int[][] B) {
 		int[][] answer = {{0, 0}, {0, 0}};
 		
