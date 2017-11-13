@@ -18,7 +18,6 @@ public class SumMatrix {
 	int[][] sumMatrix(int[][] A, int[][] B) {
 		int[][] answer = {{0, 0}, {0, 0}};
 		
-		System.out.println(A[0][0]+B[0][0]);
 		for(int i = 0; i<A.length; i++){
 			for(int j = 0; j<A.length; j++){
 				answer[i][j] = A[i][j] + B[i][j];
