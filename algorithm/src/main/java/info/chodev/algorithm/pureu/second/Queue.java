@@ -3,6 +3,8 @@ package info.chodev.algorithm.pureu.second;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
+ * https://www.acmicpc.net/problem/1021
+ * 
  * 회전하는 큐
  * 
  * @author pureu

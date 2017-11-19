@@ -3,7 +3,10 @@ package info.chodev.algorithm.pureu.second;
 import java.util.Arrays;
 
 /**
+ * https://programmers.co.kr/learn/challenge_codes/145
+ * 
  * 야근 지수
+ * 
  * 회사원인 수민이는 많은 일이 쌓여 있습니다. 
  * 수민이는 야근을 최소화하기 위해 남은 일의 작업량을 숫자로 메기고, 일에 대한 야근 지수를 줄이기로 결정했습니다. 
  * 야근 지수는 남은 일의 작업량을 제곱하여 더한 값을 의미합니다. 
