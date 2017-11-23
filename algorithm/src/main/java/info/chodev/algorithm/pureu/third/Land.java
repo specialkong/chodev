@@ -7,6 +7,8 @@ import java.util.List;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
+ * https://programmers.co.kr/learn/challenge_codes/154
+ * 
  * 땅따먹기 게임
  * 
  * @author pureu

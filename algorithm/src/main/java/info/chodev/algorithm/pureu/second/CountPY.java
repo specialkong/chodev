@@ -1,6 +1,8 @@
 package info.chodev.algorithm.pureu.second;
 
 /**
+ * https://programmers.co.kr/learn/challenge_codes/96
+ * 
  * 문자열 내 p와 y의 개수
  * 
  * numPY함수는 대문자와 소문자가 섞여있는 문자열 s를 매개변수로 입력받습니다. s에 'p'의 개수와 'y'의 개수를 비교해 같으면

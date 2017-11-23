@@ -1,6 +1,8 @@
 package info.chodev.algorithm.pureu.second;
 
 /**
+ * https://programmers.co.kr/learn/challenge_codes/187
+ * 
  * 가장 큰 정사각형 찾기
  * 
  * @author pureu
