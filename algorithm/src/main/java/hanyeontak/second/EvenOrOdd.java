@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class EvenOrOdd {
 	String evenOrOdd(int num) {//num은 0 이상의 정수임을 어떻게 표현하는지 몰겠다.
 		String result= "";
+		
         if(num % 2 == 0){
         	result= "짝";
         }else{
