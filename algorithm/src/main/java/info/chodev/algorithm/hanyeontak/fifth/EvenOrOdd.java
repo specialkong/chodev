@@ -1,4 +1,4 @@
-package hanyeontak.second;
+package info.chodev.algorithm.hanyeontak.fifth;
 
 import java.util.Scanner;
 /**
