@@ -26,7 +26,7 @@ public class Expressions {
 		int answer = 0;
 		int sum = 0;
 		
-		for(int a= 1; a!=num+1; a++){ //a: 시작점 (시작이 num이 될떄가 마지막임) -예) 15: a=15일떄 끝.
+		for(int a= 1; a<=num; a++){ //a: 시작점 (시작이 num이 될떄가 마지막임) -예) 15: a=15일떄 끝.
 			sum = 0;
 			for(int i=a; sum<=num; i++){
 				sum += i;//1+2+3+4+5
@@ -46,5 +46,8 @@ public class Expressions {
 		Expressions expressions = new Expressions();
 		// 아래는 테스트로 출력해 보기 위한 코드입니다.
 		System.out.println(expressions.expressions(15));
+		System.out.println(expressions.expressions(1));
+		System.out.println(expressions.expressions(2));
+		System.out.println(expressions.expressions(3));
 	}
 }
