@@ -17,6 +17,7 @@ class Caesar {
 		char toChar = '\u0000';
 		String result = "";
 		String[] resultStr = s.split(" ");
+		
 		// 함수를 완성하세요.
 		for(int i = 0; i<resultStr.length; i++){
 			toChar = resultStr[i].charAt(0);
