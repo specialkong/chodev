@@ -1,7 +1,6 @@
 package info.chodev.algorithm.pureu.first;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -79,7 +78,6 @@ public class HarshadNumber {
 		
 		if(!direction) {
 			Collections.reverse(list);
-			System.out.println(Arrays.toString(list.toArray()));
 		}
 		return list;
 	}
